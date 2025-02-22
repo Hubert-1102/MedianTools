@@ -1,8 +1,16 @@
 # MedianTools
 
-该工具适用于MedianGroup citation ppt制作
+该工具适用于MedianGroup citation ppt制作，适用selenium从google scholar前端网页抓取数据，可以保证检索到文章信息与google scholar一致
 
 
+
+**<u>目前不支持获取文章引用原文</u>**
+
+
+
+
+
+## Important
 
 在google scholar中搜索引用该文章的所有文章，例如检索<u>MetaMath</u>可以看到所有478篇文章
 
@@ -14,6 +22,19 @@
 
 ```python
 get_author_homepage(author,api_key="xxxx")
-
 ```
+
+
+
+
+
+## TODO
+
+目前支持如下来源文章的作者数据自动获取，其他网站暂不支持需要手动检索作者姓名补充加入csv中，若有出现频率较高但不在此列的网站，欢迎完善代码
+
+- arxiv.org
+- ieee.org
+- OpenReview
+- NeurIPS
+- ACL Anthology
 
