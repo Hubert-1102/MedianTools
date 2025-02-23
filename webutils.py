@@ -262,3 +262,4 @@ def get_title_url_year(url_scholar):
         writer = csv.DictWriter(f, fieldnames=['title', 'url', 'year'])
         writer.writeheader()
         writer.writerows(unique_results)
+        

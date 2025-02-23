@@ -1,3 +1,5 @@
 *.csv
 *.pptx
+*.pdf
 !data/slide.pptx
+/.idea

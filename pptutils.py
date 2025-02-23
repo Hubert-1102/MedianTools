@@ -29,6 +29,19 @@ def generate(papers,output):
                                 run.text = f'{paper.authors[index]},{paper.author_homepages[index]}'
                             else:
                                 run.text = f'{paper.authors[index]},{paper.author_homepages[index]}\n'
+                    elif j == 5:
+                        font = paragraph.runs[0].font
+                        paragraph.clear()
+                        run = paragraph.add_run()
+                        set_format(run,font)
+                        print(paper.symbol)
+                        run.text = paper.symbol
+                    elif j == 7:
+                        font = paragraph.runs[0].font
+                        paragraph.clear()
+                        run = paragraph.add_run()
+                        set_format(run,font)
+                        run.text = paper.content
                     elif j == 9:
                         font = paragraph.runs[0].font
                         paragraph.clear()
