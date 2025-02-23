@@ -34,7 +34,6 @@ def generate(papers,output):
                         paragraph.clear()
                         run = paragraph.add_run()
                         set_format(run,font)
-                        print(paper.symbol)
                         run.text = paper.symbol
                     elif j == 7:
                         font = paragraph.runs[0].font
