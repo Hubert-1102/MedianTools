@@ -4,11 +4,15 @@
 
 
 
-**<u>目前支持自动下载arxiv文章pdf，以及获取部分文章引用原文</u>**
+**<u>目前支持自动下载arxiv文章pdf，以及获取大部分文章引用原文</u>**
 
+## 2025/02/25 update
 
+支持根据引用标号查询原文，如
 
+In Obedience to Authority: An Experimental View, 1974.1IntroductionLarge language models (LLMs) have shown great success in various tasks [24, 50, 60, 14, 15, 46,32, 68, 72].
 
+详见  *extract_fromPDF.py*  
 
 ## Important
 
