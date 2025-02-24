@@ -31,16 +31,16 @@ def read_data(path):
     df = pd.read_csv(path)
     length = df.shape[1]
     for index, row in df.iterrows():
-        title = row[0]
-        url = row[1]
-        str_author = row[2]
-        str_home = row[3]
-        year = row[4]
+        title = row.iloc[0]
+        url = row.iloc[1]
+        str_author = row.iloc[2]
+        str_home = row.iloc[3]
+        year = row.iloc[4]
         content = ''
         symbol = ''
         if length > 5:
-            content = row[5]
-            symbol = row[6]
+            content = row.iloc[5]
+            symbol = row.iloc[6]
         author_list = ast.literal_eval(str_author)
         home_list = ast.literal_eval(str_home)
         papers.append(Paper(title, url, authors=author_list, homepage=home_list, year=year, content=content, symbol=symbol))

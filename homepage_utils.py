@@ -60,6 +60,9 @@ def get_author_homepage(author_name: str, api_key: str = "781d4246a11f0454eb61b9
             if link_scholar is not None:
                 return link_scholar
 
+            link_ = match_link(results, '~')
+            if link_ is not None:
+                return link_
 
             # 如果没有明显主页特征，返回空字符串
             return ' '
@@ -76,4 +79,4 @@ def match_link(results, match_str):
     return None
 
 if __name__ == '__main__':
-    print(get_author_homepage("Fatih Porikli"))
+    print(get_author_homepage("Wencheng N M N Wu"))
