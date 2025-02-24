@@ -17,8 +17,10 @@ def get_author_homepage(author_name: str, api_key: str = "781d4246a11f0454eb61b9
     返回:
         str: 首个匹配的主页链接，如果没有则返回None
     """
+
+    # 使用双引号禁用模糊匹配
     url = "https://google.serper.dev/search"
-    query = f"homepage of {author_name}, a researcher on computer science"
+    query = f'homepage of "{author_name}", a researcher on computer science'
 
     headers = {
         'X-API-KEY': api_key,
@@ -36,15 +38,42 @@ def get_author_homepage(author_name: str, api_key: str = "781d4246a11f0454eb61b9
         if response.status_code == 200:
             results = response.json().get('organic', [])
 
-            # 优先寻找包含"homepage"或"个人主页"的链接
-            for result in results[:5]:  # 检查前5个结果
-                link = result.get('link', '')
-                if any(keyword in link.lower() for keyword in ["~", "homepage", "personal"]):
-                    return link
+            # 设置优先顺序
 
-            # 如果没有明显主页特征，返回第一个结果
-            return results[0].get('link') if results else None
+            link_github = match_link(results, 'github.io')
+            if link_github is not None:
+                return link_github
+            
+            link_edu = match_link(results, 'edu')
+            if link_edu is not None:
+                return link_edu
+
+            link_homepage = match_link(results, 'homepage')
+            if link_homepage is not None:
+                return link_homepage
+            
+            link_personal = match_link(results, 'personal')
+            if link_personal is not None:
+                return link_personal
+            
+            link_scholar = match_link(results, 'scholar')
+            if link_scholar is not None:
+                return link_scholar
+
+
+            # 如果没有明显主页特征，返回空字符串
+            return ' '
 
     except Exception as e:
         print(f"搜索失败: {str(e)}")
         return None
+
+def match_link(results, match_str):
+    for result in results[:5]:# 检查前5个结果
+        link = result.get('link', '')
+        if match_str in link.lower():
+            return link
+    return None
+
+if __name__ == '__main__':
+    print(get_author_homepage("Fatih Porikli"))
