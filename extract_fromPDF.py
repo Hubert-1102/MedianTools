@@ -15,7 +15,10 @@ if __name__ == '__main__':
     text = extract_text_with_fitz(arxiv_pdf)
     content = find_content(text,keywords)
     symbol = find_citation_symbol(content,keywords)
+
     # 如果Yu et al. 这种方式没有找到，则进入标号匹配[34]模式
+
+    
     if content == '未找到':
         title = 'Metamath' # 此处替换成自己文章中的关键字
         print(arxiv_pdf)
@@ -25,6 +28,7 @@ if __name__ == '__main__':
            content = sentences[0] 
         if symbol_number:
             symbol = str(symbol_number)
-        print(content)
-        print(symbol)   
+        
+        print(f'引用原文: {content}')
+        print(f'引用标号: {symbol}')   
 
