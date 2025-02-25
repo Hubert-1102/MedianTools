@@ -29,6 +29,14 @@ In Obedience to Authority: An Experimental View, 1974.1IntroductionLarge languag
 
 ## Important
 
+安装环境，建议使用python=3.11
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
 在google scholar中搜索引用该文章的所有文章，例如检索<u>MetaMath</u>可以看到所有478篇文章
 
 复制该url，到tools.ipynb中,浏览器自动打开后,需要放大至最大窗口,否则 ***下一页***  按钮不会出现 
