@@ -1,6 +1,6 @@
 # MedianTools
 
-该工具适用于MedianGroup citation ppt制作，适用selenium从google scholar前端网页抓取数据，可以保证检索到文章信息与google scholar一致
+该工具适用于MedianGroup citation ppt制作，使用selenium从google scholar前端网页抓取数据，可以保证检索到文章信息与google scholar一致
 
 
 
